@@ -1,4 +1,4 @@
-# obstache_classifier
+# obstacle_classifier
 
 Este projeto tem o objetivo de localizar e identificar obstáculos de formas cilíndricas e retangulares em um ambiente simulado pelo ROS 2, utilizando o pacote do [TurtleBot 3](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/) e o software de simulação [Gazebo](https://gazebosim.org/home). 
 
