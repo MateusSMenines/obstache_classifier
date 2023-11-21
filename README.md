@@ -29,7 +29,7 @@ Inicialmente é gerado de forma aleatória, posições dos obstáculos no mundo 
 
 ### Navegação autônoma
 
-A navegação do robô no mundo é realizada de forma autonoma, utilizando um controlador simples representado pela equação adiante:
+A navegação do robô no mundo é realizada de forma automatica, se movendo linearmente até o encontro de um obstaculo a frente, fazendo uma parada e rotacionando aaté o obstaculo sair do ranger de detecção pelo laser Ylidar. A Figura abaixo representa esse controle.
 
 
 
@@ -37,11 +37,11 @@ O objetivo dessa locomoção é percorrer todo o ambiente para coletar dados de 
 
 ### Coleta de dados
 
-O sensor Ylidar do robô coleta dados sobre a posição dos obstáculos no ambiente. Essa informação está no referencial do robô, portanto, a fim de localizar os obstáculos no mundo, é necessário efetuar as transformações de referencial desde o ponto observado pelo Ylidar até o referencial do mundo, passando pelo referencial do robô conhecido no ambiente.
+O sensor Ylidar do robô coleta dados sobre a posição dos obstáculos no ambiente. Essa informação está no referencial do robô, portanto, a fim de localizar os obstáculos no mundo, é necessário efetuar as transformações de referencial desde o ponto observado pelo Ylidar até o referencial do mundo, passando pelo referencial do robô conhecido no ambiente. A Figura abaixo representa essa transformação.
 
 ### Clusterização 
 
-Após a coleta de dados das posições de todos os obstáculos no ambiente, essas informações de posição são então organizadas em clusters de pontos realizado pela biblioteca [Sklear](https://scikit-learn.org/stable/install.html) utilizando o algoritmo de [DBSCAN](https://scikit-learn.org/stable/modules/clustering.html#dbscan). Cada cluster é composto por pontos bidimensionais (X e Y) que formam uma nuvem de pontos representando a posição de um obstáculo. A separação dos clusters é baseada na distância entre os pontos e na quantidade de pontos que compõem cada detecção de obstáculos. Portanto, se houver 8 obstáculos no ambiente, a etapa de clusterização resultará em 8 conjuntos distintos de nuvens de pontos, cada um representando um obstáculo.
+Após a coleta de dados das posições de todos os obstáculos no ambiente, essas informações de posição são então organizadas em clusters de pontos realizado pela biblioteca [Sklear](https://scikit-learn.org/stable/install.html) utilizando o algoritmo de [DBSCAN](https://scikit-learn.org/stable/modules/clustering.html#dbscan). Cada cluster é composto por pontos bidimensionais (X e Y) que formam uma nuvem de pontos representando a posição de um obstáculo. A separação dos clusters é baseada na distância entre os pontos e na quantidade de pontos que compõem cada detecção de obstáculos. Portanto, se houver 9 obstáculos no ambiente, a etapa de clusterização resultará em 9 conjuntos distintos de nuvens de pontos, cada um representando um obstáculo.
 
 ### Classificação dos obstáculos
 
