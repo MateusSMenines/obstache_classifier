@@ -32,7 +32,7 @@ Inicialmente é gerado de forma aleatória, posições dos obstáculos no mundo 
 A navegação do robô no mundo é realizada de forma automatica, se movendo linearmente até o encontro de um obstaculo a frente, fazendo uma parada e rotacionando aaté o obstaculo sair do ranger de detecção pelo laser Ylidar. A Figura abaixo representa como é realizado esta navegação.
 
 <p align="center">
-    <img src="etc/images/turtlebot3_explorer.png" alt="turtlebot3_explorer" width="400"/>
+    <img src="etc/images/navigation.png" alt="navigation" width="400"/>
 </p>
 
 
@@ -41,6 +41,10 @@ O objetivo dessa locomoção é percorrer todo o ambiente para coletar dados de 
 ### Coleta de dados
 
 O sensor Ylidar do robô coleta dados sobre a posição dos obstáculos no ambiente. Essa informação está no referencial do robô, portanto, a fim de localizar os obstáculos no mundo, é necessário efetuar as transformações de referencial desde o ponto observado pelo Ylidar até o referencial do mundo, passando pelo referencial do robô conhecido no ambiente. A Figura abaixo representa essa transformação.
+
+<p align="center">
+    <img src="etc/images/transformation" alt="transformation" width="400"/>
+</p>
 
 ### Clusterização 
 
@@ -58,13 +62,13 @@ Resultado pode ser visto abaixo, junto com a identificação, classificação e 
 ### Identificação
 
 <p align="center">
-    <img src="etc/images/plot.png" alt="turtlebot3_explorer" width="400"/>
+    <img src="etc/images/plot.png" alt="plot" width="400"/>
 </p>
 
 ### Classificação e localização
 
 <p align="center">
-    <img src="etc/images/resultado.png" alt="turtlebot3_explorer" width="400"/>
+    <img src="etc/images/resultado.png" alt="result" width="400"/>
 </p>
 
 
