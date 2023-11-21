@@ -29,8 +29,11 @@ Inicialmente é gerado de forma aleatória, posições dos obstáculos no mundo 
 
 ### Navegação autônoma
 
-A navegação do robô no mundo é realizada de forma automatica, se movendo linearmente até o encontro de um obstaculo a frente, fazendo uma parada e rotacionando aaté o obstaculo sair do ranger de detecção pelo laser Ylidar. A Figura abaixo representa esse controle.
+A navegação do robô no mundo é realizada de forma automatica, se movendo linearmente até o encontro de um obstaculo a frente, fazendo uma parada e rotacionando aaté o obstaculo sair do ranger de detecção pelo laser Ylidar. A Figura abaixo representa como é realizado esta navegação.
 
+<p align="center">
+    <img src="etc/images/turtlebot3_explorer.png" alt="turtlebot3_explorer" width="400"/>
+</p>
 
 
 O objetivo dessa locomoção é percorrer todo o ambiente para coletar dados de posição de cada obstaculo no mundo.
@@ -50,10 +53,56 @@ Cada cluster de pontos que representa um obstáculo pode adotar uma de duas form
 
 ## Resultados
 
-Alguns resultados podem ser visto abaixo, junto com a identificação, classificação e localização dos obstáculos. 
+Resultado pode ser visto abaixo, junto com a identificação, classificação e localização dos obstáculos. 
+
+### Identificação
+
+<p align="center">
+    <img src="etc/images/plot.png" alt="turtlebot3_explorer" width="400"/>
+</p>
+
+### Classificação e localização
+
+<p align="center">
+    <img src="etc/images/resultado.png" alt="turtlebot3_explorer" width="400"/>
+</p>
 
 
+## Como usar
 
+Criar workspace:
+```bash
+ mkdir -p ./ros2_ws/src
+```
+```bash
+cd -p ./ros2_ws/src
+```
 
+Realizar o clone do repositorio com comando abaixo:
+```bash
+https://github.com/MateusSMenines/obstacle_classifier.git
+```
+
+Compilar os pacotes:
+```bash
+cd ..
+```
+```bash
+colcon build
+```
+
+executar o launch:
+```bash
+ros2 launch object_classifier object_classifier.launch.py x_pose:=X y_pose:=Y
+```
+
+Essa Pose X e Y é do spawner do robô no mundo, substitua por um valor.
+
+Para modificar o mundo, ir no diretório "launch/" e aonde estiver especificado:
+
+   world = os.path.join(
+        get_package_share_directory('turtlebot3_gazebo'),
+        'worlds',
+        'g1w1.world'
 
 
