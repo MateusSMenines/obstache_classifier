@@ -43,7 +43,7 @@ O objetivo dessa locomoção é percorrer todo o ambiente para coletar dados de 
 O sensor Ylidar do robô coleta dados sobre a posição dos obstáculos no ambiente. Essa informação está no referencial do robô, portanto, a fim de localizar os obstáculos no mundo, é necessário efetuar as transformações de referencial desde o ponto observado pelo Ylidar até o referencial do mundo, passando pelo referencial do robô conhecido no ambiente. A Figura abaixo representa essa transformação.
 
 <p align="center">
-    <img src="etc/images/transformation" alt="transformation" width="400"/>
+    <img src="etc/images/transformation.png" alt="transformation" width="400"/>
 </p>
 
 ### Clusterização 
