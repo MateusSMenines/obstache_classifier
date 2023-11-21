@@ -36,7 +36,7 @@ A navegação do robô no mundo é realizada de forma automatica, se movendo lin
 </p>
 
 
-O objetivo dessa locomoção é percorrer todo o ambiente para coletar dados de posição de cada obstaculo no mundo.
+O objetivo dessa locomoção é percorrer todo o ambiente para coletar dados de posição de cada obstaculo no mundo, sendo que o critério de parada é quando o robô mapear toda a parede de fora até um contador atingir a quantidade de pontos de a parede contém.
 
 ### Coleta de dados
 
@@ -53,6 +53,10 @@ Após a coleta de dados das posições de todos os obstáculos no ambiente, essa
 ### Classificação dos obstáculos
 
 Cada cluster de pontos que representa um obstáculo pode adotar uma de duas formas: circular ou retangular. Para determinar essa classificação, emprega-se uma técnica de regressão não linear, que estima círculos em torno desses pontos. O erro mínimos quadráticos dessa regressão fornece uma indicação do tipo de obstáculo que o cluster representa. Se o erro for consideravelmente maior em comparação com os clusters circulares, o obstáculo é classificado como retangular; caso o erro seja próximo de zero, o obstáculo é considerado circular. O algoritmo utilizado para essa regressão por ser visto neste [link](https://github.com/AtsushiSakai/PythonRobotics/blob/master/Mapping/circle_fitting/circle_fitting.py). A equação dos erro minimos quadrados pode ser vista abaixo:
+
+<p align="center">
+    <img src="etc/images/equation.png" alt="equation" width="400"/>
+</p>
 
 
 ## Resultados
