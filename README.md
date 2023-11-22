@@ -104,13 +104,5 @@ executar o launch:
 ros2 launch object_classifier object_classifier.launch.py x_pose:=X y_pose:=Y
 ```
 
-Essa Pose X e Y é do spawner do robô no mundo, substitua por um valor.
-
-Para modificar o mundo, ir no diretório _launch/_ e aonde estiver especificado:
-
-   world = os.path.join(
-        get_package_share_directory('turtlebot3_gazebo'),
-        'worlds',
-        'g1w1.world'
 
 
